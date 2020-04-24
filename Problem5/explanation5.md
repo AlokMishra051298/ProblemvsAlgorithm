@@ -1,8 +1,8 @@
 # Code Design:
 1. TrieNode:
+has two instance variable is_word, children(dictionary)
 Insert function:
-
-just checking if char is not in children, this operation isn't needed, thanks to the defaultdict
+Simple TrieNode at children[char]
 
 Suffixes function:
 
@@ -15,6 +15,7 @@ Loop completed, set node.is_word to True
 
 Find function:
 We need to iterate over each char in word, get char in node.children, assign children[char] as node for next iteration
+If we not prefix is there it returns None
 # Time Complexity:
 insert and find:
 > Both takes O(n), cause 1 iteration per char
